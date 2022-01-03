@@ -1,0 +1,41 @@
+{% extends "baseForm.html" %}
+{% block form %}
+<div class="container-contact100">
+
+    <div class="wrap-contact100">
+        <form class="contact100-form validate-form"  method = "POST" action = "/insert/parkings/">
+            {% csrf_token %}
+
+            <span class="contact100-form-title">
+                Add Parking Area
+            </span>
+            <div class="wrap-input100 validate-input" data-validate="Please enter Hospital id">
+                <input class="input100" type="number" name="hospital_id" placeholder="Hospital ID">
+                <span class="focus-input100"></span>
+            </div>
+            <div class="wrap-input100 validate-input" data-validate="Please enter Floors">
+                <input class="input100" type="number" name="floors" placeholder="Floors">
+                <span class="focus-input100"></span>
+            </div>
+            <div class="wrap-input100 validate-input" data-validate="Please enter Time allotment">
+                <input class="input100" type="number" name="time_allotment" placeholder="Time allotment (Mins)">
+                <span class="focus-input100"></span>
+            </div>
+            <div class="wrap-input100 validate-input" data-validate="Please enter space">
+                <input class="input100" type="number" name="space" placeholder="Space (Meter squared)">
+                <span class="focus-input100"></span>
+            </div>
+            <div class="container-contact100-form-btn">
+                <button class="contact100-form-btn">
+                    <span>
+                        <i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+                        Add Parking Area
+                    </span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

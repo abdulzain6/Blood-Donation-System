@@ -1,0 +1,41 @@
+{% extends "baseForm.html" %}
+{% block form %}
+<div class="container-contact100">
+
+    <div class="wrap-contact100">
+        <form class="contact100-form validate-form" method = "POST" action = "/insert/bloodbanks/">
+            {% csrf_token %}
+            <span class="contact100-form-title">
+                Add A Blood Bank
+            </span>
+
+            <div class="wrap-input100 validate-input" data-validate="Please enter name">
+                <input class="input100" type="text" name="name" placeholder="Name">
+                <span class="focus-input100"></span>
+            </div>
+            <div class="wrap-input100 validate-input" data-validate="Please enter phone number">
+                <input class="input100" type="number" name="phone_number" placeholder="Phone number">
+                <span class="focus-input100"></span>
+            </div>
+            <div class="wrap-input100 validate-input" data-validate="Please enter Address">
+                <input class="input100" type="text" name="address" placeholder="Address">
+                <span class="focus-input100"></span>
+            </div>
+            <div class="wrap-input100 validate-input" data-validate="Please enter Hospital id">
+                <input class="input100" type="number" name="hospital_id" placeholder="Hospital ID">
+                <span class="focus-input100"></span>
+            </div>
+
+            <span class="focus-input100"></span>
+            <div class="container-contact100-form-btn">
+                <button class="contact100-form-btn">
+                    <span>
+                        <i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+                        Add Blood Bank
+                    </span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

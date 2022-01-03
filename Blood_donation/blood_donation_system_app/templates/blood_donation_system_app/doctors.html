@@ -1,0 +1,49 @@
+{% extends "baselist.html" %}
+{%block list%}
+<h3 class="text-white bg-dark text-center">Doctors</h3>
+<h3 class="text-white bg-dark text-center">&nbsp</h3>
+
+<table class="table">
+    <thead class="thead-dark">
+
+
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Specialization</th>
+        <th scope="col">CNIC</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Hospital ID</th>
+        <th scope = "col">Delete Doctors</th>
+        <th scope="col">
+          <form action="/report/doctors" method='GET'>
+            <button type="submit" class="btn btn-success">Generate Report</button>
+          </form>
+            
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for item in doctors %}
+        <td><a href="/doctors/{{item.id}}">{{item.id}}</a></td>
+        <td>{{item.Name}}</td>
+        <td>{{item.Specialization}}</td>
+        <td>{{item.CNIC}}</td>
+        <td>{{item.Gender}}</td>
+        <td>{{item.Phone_Number}}</td> 
+        <td>{{item.Hospital.id}}</td>
+        <td>
+          <form action = "{% url 'delete_doctors' %}" method="post" autocomplete="off">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline-danger">Delete</button>
+            <input type="hidden" name="delete" value="{{item.id}}" />
+         </form>
+        </td>
+      </tr>
+        {%endfor%}
+
+    </tbody>
+  </table>
+{%endblock%}

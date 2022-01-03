@@ -1,0 +1,51 @@
+{% extends "baselist.html" %}
+{%block list%}
+<h3 class="text-white bg-dark text-center">Donors</h3>
+<h3 class="text-white bg-dark text-center">&nbsp</h3>
+
+<table class="table">
+    <thead class="thead-dark">
+
+
+      <tr>
+        <th scope="col">CNIC</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Blood Group</th>
+        <th scope="col">Examined By</th>
+        <th scope="col">Blood Bank ID</th>
+        <th scope="col">Medical report</th>
+        <th scope = "col">Delete Donors</th>
+        <th scope="col">
+          <form action="/report/donors" method='GET'>
+            <button type="submit" class="btn btn-success">Generate Report</button>
+          </form>
+            
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for item in donors %}
+        <td><a href="/donors/{{item.CNIC}}">{{item.CNIC}}</a></td>
+        <td>{{item.Name}}</td>
+        <td>{{item.Age}}</td>
+        <td>{{item.Gender}}</td>
+        <td>{{item.Blood_Group}}</td>
+        <td>{{item.Examined_By.Name}}</td> 
+        <td>{{item.Blood_Bank.id}}</td>
+        <td>{{item.Medical_Report}}</td>
+        <td>
+          <form action = "{% url 'delete_donors' %}" method="post" autocomplete="off">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline-danger">Delete</button>
+            <input type="hidden" name="delete" value="{{item.CNIC}}" />
+          </form>
+        </td>
+      </tr>
+        {%endfor%}
+
+    </tbody>
+  </table>
+{%endblock%}

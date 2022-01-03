@@ -1,0 +1,45 @@
+{% extends "baseForm.html" %}
+{% block form %}
+    <div class="container-contact100">
+
+        <div class="wrap-contact100">
+            <form class="contact100-form validate-form" method = "POST" action = "/insert/pharmacys/">
+                {% csrf_token %}
+
+                <span class="contact100-form-title">
+                    Add A Pharmacy
+                </span>
+
+                <div class="wrap-input100 validate-input" data-validate="Please enter name">
+                    <input class="input100" type="text" name="name" placeholder="Name">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Please enter Hospital id">
+                    <input class="input100" type="number" name="hospital_id" placeholder="Hospital ID">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Please enter medicine amount">
+                    <input class="input100" type="number" name="medicine_amt" placeholder="Medicine amount">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Please enter phone number">
+                    <input class="input100" type="number" name="phone_number" placeholder="Phone Number">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Please enter staff number">
+                    <input class="input100" type="number" name="staff_no" placeholder="Staff">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn">
+                        <span>
+                            <i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+                            Add Pharmacy
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{%endblock%}

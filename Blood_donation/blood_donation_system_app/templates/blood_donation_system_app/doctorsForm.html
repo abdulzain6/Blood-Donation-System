@@ -1,0 +1,53 @@
+{% extends "baseForm.html" %}
+{% block form %}
+
+    <div class="container-contact100">
+
+        <div class="wrap-contact100">
+            <form class="contact100-form validate-form" method = "POST" action = "/insert/doctors/">
+                {% csrf_token %}
+
+                <span class="contact100-form-title">
+                    Add A Doctor
+                </span>
+
+                <div class="wrap-input100 validate-input" data-validate="Please enter name">
+                    <input class="input100" type="text" name="name" placeholder="Full Name">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Please enter Specialization: e@a.x">
+                    <input class="input100" type="text" name="Specialization" placeholder="Specialization">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Please enter Phone_Number">
+                    <input class="input100" type="number" name="Phone_Number" placeholder="Phone Number">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Please enter gender">
+                    <input class="input100" type="text" name="gender" placeholder="Gender">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Please enter CNIC">
+                    <input class="input100" type="number" name="CNIC" placeholder="CNIC">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Please enter Hospital id">
+                    <input class="input100" type="number" name="hospital_id" placeholder="Hospital ID">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn">
+                        <span>
+                            <i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+                            Add Doctor
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

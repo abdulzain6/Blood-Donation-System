@@ -1,0 +1,60 @@
+{% extends "baseForm.html" %}
+{% block form %}
+    <div class="container-contact100">
+
+        <div class="wrap-contact100">
+            <form class="contact100-form validate-form" method = "POST" action = "/insert/patients/">
+                {% csrf_token %}
+
+                <span class="contact100-form-title">
+                    Add A Patient
+                </span>
+
+                <div class="wrap-input100 validate-input" data-validate="Please enter your name">
+                    <input class="input100" type="text" name="name" placeholder="Full Name">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Please enter your Age: e@a.x">
+                    <input class="input100" type="number" name="age" placeholder="Age">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Please enter CNIC">
+                    <input class="input100" type="number" name="cnic" placeholder="CNIC">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Please enter gender">
+                    <input class="input100" type="text" name="gender" placeholder="Gender">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Please enter Blood group">
+                    <input class="input100" type="text" name="blood_group" placeholder="Blood Group">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Please enter doctors id">
+                    <input class="input100" type="number" name="examined_by_id" placeholder="Doctor's id">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Please enter blood banks id">
+                    <input class="input100" type="text" name="blood_bank_id" placeholder="Blood Bank's id">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="wrap-input100 validate-input" data-validate="Please enter the medical report">
+                    <textarea class="input100" name="medical_report" placeholder="Medical Report"></textarea>
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="container-contact100-form-btn">
+                    <button class="contact100-form-btn">
+                        <span>
+                            <i class="fa fa-paper-plane-o m-r-6" aria-hidden="true"></i>
+                            Add Patient
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
